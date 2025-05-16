@@ -2,23 +2,23 @@ import { CloudUpload } from 'lucide-react';
 
 export default function Header() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-pink-300 to-white text-center px-4">
-      <div className="max-w-3xl">
+    <div className="min-h-[90vh] flex items-center justify-center bg-gradient-to-b from-pink-300 to-white text-center px-4">
+      <div className="max-w-5xl">
         {/* Tags */}
-        <div className="mb-6 flex justify-center gap-4">
+        <div className="mb-6 w-1/3 mx-auto flex justify-center gap-4 bg-white rounded-full p-2 shadow-md">
           {['crisp', 'fast', 'smooth'].map((tag, index) => (
             <span
               key={tag}
-              className="bg-white text-pink-500 font-medium text-sm px-4 py-1 rounded-full border border-gray-200 shadow-sm"
+              className=" text-pink-500 font-semibold text-sm py-1"
             >
               {tag}
-              {index < 2 && <span className="mx-2 text-pink-400">•</span>}
+              {index < 2 && <span className="mx-2 font-bold text-pink-400">•</span>}
             </span>
           ))}
         </div>
 
         {/* Heading */}
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-black leading-tight mb-4">
+        <h1 className="font-bricolage text-4xl sm:text-5xl font-extrabold text-black leading-tight mb-4">
           Free Mockup Generator with <br /> 5000+ Mockup Templates
         </h1>
 

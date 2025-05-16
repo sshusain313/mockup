@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import CheckIcon from './CheckIcon';
@@ -15,14 +14,7 @@ interface PlanFeature {
 const PricingTable: React.FC = () => {
   // Plan features data
   const features: Record<string, PlanFeature[]> = {
-    "General": [
-      {
-        name: "Edit",
-        free: true,
-        pro: true,
-        max: true,
-        lifetime: true,
-      },
+    "Edit": [
       {
         name: "Unlimited",
         free: false,
@@ -56,7 +48,7 @@ const PricingTable: React.FC = () => {
         lifetime: true,
       },
     ],
-    "PSD Mockups": [
+    "PRO Mockups": [
       {
         name: "Accessible",
         free: false,
@@ -172,16 +164,17 @@ const PricingTable: React.FC = () => {
 
   return (
     <div className="container mx-auto bg-pricing-gradient px-4 py-16 max-w-6xl">
-      <div className="text-center mb-10">
-        <h2 className="text-3xl font-bold mb-2">Compare plans & features</h2>
-        <p className="text-gray-500">
+      <div className="text-start mb-10 ">
+        <h2 className="text-4xl font-bold mb-2">Compare plans & features</h2>
+        <p className="text-gray-500 text-xl mb-4">
           See how our plans stack up against each other and choose the one that works for you.
         </p>
       </div>
 
       <div className="mb-6">
         <div className="flex flex-col">
-          <div className="grid grid-cols-5 border-b pb-6">
+          {/* Table Header */}
+          <div className="grid grid-cols-5 pb-6 bg-white sticky top-0 z-10">
             <div className="col-span-1">
               <div className="text-sm font-medium text-gray-500 mb-3">Plans</div>
               <div className="flex items-center gap-2 mb-2">
@@ -239,13 +232,13 @@ const PricingTable: React.FC = () => {
           {/* Features comparison */}
           {Object.entries(features).map(([category, featuresList], categoryIndex) => (
             <div key={category} className={categoryIndex > 0 ? "mt-8" : ""}>
-              <h3 className="font-medium text-gray-700 mb-2">{category}</h3>
+              <h3 className="font-bold text-gray-600 mb-2">{category}</h3>
               {featuresList.map((feature, featureIndex) => (
                 <div 
                   key={`${category}-${featureIndex}`} 
                   className="grid grid-cols-5 py-3 border-b border-gray-100"
                 >
-                  <div className="col-span-1 text-sm text-gray-600">
+                  <div className="col-span-1 text-md text-gray-900">
                     {feature.name}
                   </div>
                   <div className="col-span-1 flex justify-center">
